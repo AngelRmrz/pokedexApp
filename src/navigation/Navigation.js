@@ -4,7 +4,7 @@ import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import Ionicons from 'react-native-vector-icons/Ionicons';
 import Account from '../screens/Account';
 import Pokedex from '../screens/Pokedex';
-import Favorite from '../screens/Favorite';
+import FavNavigation from './FavNavigation';
 
 const Tab = createBottomTabNavigator();
 
@@ -19,7 +19,7 @@ const Navigation = () => {
             tabBarLabel: '',
             tabBarIcon: () => (renderPokeball())
         }}/>
-        <Tab.Screen name="Favorite" component={Favorite} options={{
+        <Tab.Screen name="Favoritos" component={FavNavigation} options={{
             tabBarLabel: 'Favoritos',
             tabBarIcon: ({color, size}) => (<Ionicons name="ios-heart" size={size} color={color} />)
         }}/>
