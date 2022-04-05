@@ -1,12 +1,15 @@
-import { View, Text } from 'react-native'
+import { createStackNavigator } from '@react-navigation/stack'
 import React from 'react'
+import Account from '../screens/Account'
+
+const Stack = createStackNavigator()
 
 const AccountNavigation = () => {
-  return (
-    <View>
-      <Text>AccountNavigation</Text>
-    </View>
-  )
+    return (
+      <Stack.Navigator>
+        <Stack.Screen name="AccountScreen" component={Account} options={{headerShown:false}}/>
+      </Stack.Navigator>
+    )
 }
 
 export default AccountNavigation

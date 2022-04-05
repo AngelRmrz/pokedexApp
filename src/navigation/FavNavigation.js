@@ -6,11 +6,8 @@ const Stack = createStackNavigator();
 
 const FavNavigation = () => {
   return (
-    <Stack.Navigator screenOptions={{
-        headerShown: false
-      }}
-    >
-        <Stack.Screen name="Favorite" component={Favorite}/>
+    <Stack.Navigator>
+        <Stack.Screen name="FavoriteScreen" component={Favorite} options={{headerShown:false}}/>
     </Stack.Navigator>
   )
 }
