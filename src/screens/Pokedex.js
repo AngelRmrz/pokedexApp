@@ -1,16 +1,17 @@
 import { View, Text } from 'react-native'
 import React from 'react'
 import { useAllPokemon } from '../hooks/useAllPokemon'
+import PokemonList from '../components/PokemonList'
 
 const Pokedex = () => {
 
   const { listPokemon, loading, error } = useAllPokemon()
 
-  console.log(listPokemon)
+  if (loading) return <Text>Loading...</Text>
 
   return (
     <View>
-      <Text>Pokedex</Text>
+        <PokemonList listPokemon={listPokemon}/>
     </View>
   )
 }
