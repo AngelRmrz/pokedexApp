@@ -9,9 +9,18 @@ const PokemonCard = ({pokemon}) => {
 
     return (
         <TouchableWithoutFeedback onPress={goToPokemonDetail}>
-            <Text>{pokemon.name}                </Text>
+            <View style={styles.card}>
+                <Text>{pokemon.name}</Text>
+            </View>
         </TouchableWithoutFeedback>
     )
 }
+
+const styles = StyleSheet.create({
+    card: {
+        flex: 1,
+        height: 150,
+    }
+})
 
 export default PokemonCard
