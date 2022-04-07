@@ -2,12 +2,15 @@ import { gql } from "@apollo/client";
 
 export const GET_ALL_POKEMON = gql`
     query getAllPokemon {
-        pokemon_v2_pokemon (
-            limit: 20
+        pokemons( 
+            limit: 10
+            offset: 0
         ){
-            id,
-            name
-            weight
+            results{
+                id
+                name
+                image
+            }
         }
     }
 `

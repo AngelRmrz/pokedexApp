@@ -8,7 +8,7 @@ export const useAllPokemon = () => {
 
     useEffect(() => {
         if(data){
-            setListPokemon(data.pokemon_v2_pokemon)
+            setListPokemon(data.pokemons.results)
         }
     }, [data])
 
