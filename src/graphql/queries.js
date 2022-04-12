@@ -14,3 +14,14 @@ export const GET_ALL_POKEMON = gql`
         }
     }
 `
+export const GET_POKEMON_INFO_BY_NAME = gql`
+    query getPokemonInfoByName($name: String!) {
+        pokemon(name: $name) {
+            types{
+                type{
+                    name
+                }
+            }
+        }
+    }
+`
