@@ -2,9 +2,11 @@ import { View, Text, StyleSheet, Image, TouchableWithoutFeedback } from 'react-n
 import React from 'react'
 import { useInfoPokemonByName } from '../hooks/useInfoPokemonByName'
 import { useColorByPokemonType } from '../hooks/useColorByPokemonType'
+import { useNavigation } from '@react-navigation/native'
 
 const PokemonCard = ({pokemon}) => {
 
+    const navigation = useNavigation()
     const { pokemonInfo, loading, error } = useInfoPokemonByName(pokemon.name)
     const pokemonColor = useColorByPokemonType(pokemonInfo)
     const bgStyles = {
@@ -12,7 +14,10 @@ const PokemonCard = ({pokemon}) => {
         ...styles.container
     }
     const goToPokemonDetail = () => {
-        console.log('Go to pokemon detail '+pokemon.name)
+        // console.log(pokemon)
+        navigation.navigate('Pokemon',{
+            pokemon: pokemon.name
+        })
     }
 
     if(loading) return <Text>Loading...</Text>

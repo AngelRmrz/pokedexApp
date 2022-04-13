@@ -1,10 +1,10 @@
 import { useQuery } from '@apollo/client';
 import { useState, useEffect } from 'react';
-import { GET_POKEMON_INFO_BY_NAME } from '../graphql/queries';
+import { GET_POKEMON_COLOR_BY_NAME } from '../graphql/queries';
 
 export const useInfoPokemonByName = (pokemonName) => {
     const [pokemonInfo, setPokemonInfo] = useState({})
-    const {data, loading ,error } = useQuery(GET_POKEMON_INFO_BY_NAME,{
+    const {data, loading ,error } = useQuery(GET_POKEMON_COLOR_BY_NAME,{
         variables:{
             name: pokemonName
         },
